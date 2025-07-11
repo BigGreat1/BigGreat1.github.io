@@ -1,0 +1,86 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and page layout */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header styling */
+header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header nav a {
+  color: #dbeafe;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main content wrapper */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+}
+
+/* FAQ Section */
+.faq-section h2 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Individual FAQ items */
+.faq-item {
+  margin-bottom: 25px;
+  padding-left: 15px;
+  border-left: 4px solid #1e3a8a;
+}
+
+.faq-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: #1e3a8a;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 15px 10px;
+  margin-top: 50px;
+  color: #777;
+  font-size: 0.9rem;
+}
