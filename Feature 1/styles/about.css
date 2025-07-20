@@ -1,0 +1,86 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header styling */
+header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header nav a {
+  color: #dbeafe;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main container */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+}
+
+/* Section titles */
+.about-container h2 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  border-bottom: 3px solid #1e3a8a;
+  padding-bottom: 8px;
+}
+
+/* Paragraph styling */
+.about-container p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* List styling */
+.about-container ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.about-container ul li {
+  margin-bottom: 10px;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 15px 10px;
+  margin-top: 50px;
+  color: #777;
+  font-size: 0.9rem;
+}
