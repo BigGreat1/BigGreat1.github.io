@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team 11 Rentals</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="feature 1/styles/contact.css" />
+    <link rel="stylesheet" href="feature 1/styles/about.css" />
+    <link rel="stylesheet" href="feature 1/styles/faq.css" />
+    <link rel="stylesheet" href="feature 1/styles/policy.css" />
+
+</head>
+<body>
+
+<header>
+    <h1>TEAM 11 RENTALS</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Car Types</a></li>
+            <li><a href="#">Agencies</a></li>
+            <li><a href="#">Insurance</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><button class="signIn">Sign In</button></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="filter">
+        <table>
+                <tr>
+                    <td>
+                        <div class="filterDates">
+                            <label for="date">Pick-up & Return Dates</label>
+                            <input type="date" id="date" name="date" >
+                            <button type="button" id="calendar"></button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="filterTime">
+                                <label for="Pick-upTime">Pick-up Time</label>
+                                <input type="time" id="pickUpTime" name="pickUpTime"/>
+                                <input type="time" id="dropOffTime" name="dropOffTime"/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="departure">
+                            <label for="departure">Departure</label>
+                            <input type="text" id="departureLocation" name="departureLocation" placeholder="Enter location"/>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="search">Search</button>
+                    </td>
+                </tr>
+        </table>
+    </div>
+
+    <div class="container">
+
+        <div class="section">
+            <h2>Popular Car Type</h2>
+            <div class="grid">
+                <div class="box">
+                <img src="images/Honda.jpg" alt="Car 1" />
+            </div>
+                <div class="box">
+                    <img src="images/Hyndai.jpg" alt="Car 1" />
+                </div>
+                <div class="box">
+                    <img src="images/sportcar.jpg" alt="Car 1" />
+                </div>
+                <div class="box">
+                    <img src="images/supercar.jpg" alt="Car 1" />
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Popular Car Agencies</h2>
+            <div class="grid">
+                <div class="box">Agency 1</div>
+                <div class="box">Agency 2</div>
+                <div class="box">Agency 3</div>
+                <div class="box">Agency 4</div>
+            </div>
+        </div>
+
+        <div class="reviews">
+            <h2>REVIEWS</h2>
+            <div class="grid">
+                <div class="box">Review 1</div>
+                <div class="box">Review 2</div>
+                <div class="box">Review 3</div>
+                <div class="box">Review 4</div>
+            </div>
+        </div>
+
+        <div class="section" style="margin-top: 40px;">
+            <h2>INSURANCE</h2>
+            <input type="text" placeholder="Insurance Info" />
+        </div>
+</main>
+
+<footer>
+        
+        <!-- Contact Form -->
+        <div class="footer-column contact-form">
+            <h3>Contact Us</h3>
+            <form action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="3" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+            </form>
+        </div>
+        </div>
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                <li><a href="../text/about.html">About Us</a></li>
+                <li><a href="../text/faq.html">FAQ</a></li>
+                <li><a href="../text/policy.html">Policy</a></li>
+                </ul>
+            </div>
+        
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                <a href="https://facebook.com/yourpage"><img src="../icons/facebook_icon.png" alt="Facebook"></a>
+                <a href="https://twitter.com/yourpage"><img src="../icons/twitter_icon.png" alt="Twitter"></a>
+                <a href="https://instagram.com/yourpage"><img src="../icons/instagram_icon.png" alt="Instagram"></a>
+                <a href="https://youtube.com/yourchannel"><img src="../icons/youtube_icon.png" alt="YouTube"></a>
+                </div>
+                <p>&copy; 2025 Team 11 Rentals</p>
+            </div>
+
+</footer>
+
+</body>
+</html>
+
