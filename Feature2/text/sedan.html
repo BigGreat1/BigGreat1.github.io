@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sedans</title>
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/carList.css" />
+</head>
+<body>
+<header>
+    <h1><a href="../../Feature1/text/firstpage.html">TEAM 11 RENTALS</a></h1>
+    <nav class="menu">
+        <ul>
+            <li><a href="../../Feature1/text/firstpage.html">Home</a></li>
+            <li><a href="cartypes.html" class="current">Car Types</a></li>
+            <li><a href="agencies.html">Agencies</a></li>
+            <li><a href="review.html">Reviews</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="container">
+        <h2>Sedans</h2>
+
+        <div class="carCard">
+            <img src="../images/cosySec.png" alt="BMW" />
+            <div class="car-info">
+                <h3>BMW M3 2023</h3>
+                <p>Fuel Efficient, 5 seats, Automatic</p>
+                <p>$220/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/cosySec-2.png" alt="BMW" />
+            <div class="car-info">
+                <h3>BMW 2 siries gran coupe 2024</h3>
+                <p>Fuel Efficient, 5 seats, Automatic</p>
+                <p>$270/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/cosySec-3.png" alt="BMW" />
+            <div class="car-info">
+                <h3>BMW 8 siries 2022</h3>
+                <p>Fuel Efficient, 5 seats, Automatic</p>
+                <p>$210/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/2025-Audi-S6-white-full_color-driver_side_front_quarter.png.avif" alt="BMW" />
+            <div class="car-info">
+                <h3>Audi RS5 2023</h3>
+                <p>Fuel Efficient, 5 seats, Automatic</p>
+                <p>$180/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/2025-Audi-A8-white-full_color-driver_side_front_quarter.png.avif" alt="BMW" />
+            <div class="car-info">
+                <h3>Audi A8 2025</h3>
+                <p>Fuel Efficient, 5 seats, Automatic</p>
+                <p>$195/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    document.querySelectorAll('.reserveBtn').forEach(button => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.carCard');
+            const image = card.querySelector('img').src;
+            const name = card.querySelector('h3').innerText;
+            const details = card.querySelectorAll('p')[0].innerText;
+            const price = card.querySelectorAll('p')[1].innerText;
+
+            localStorage.setItem('selectedCar', JSON.stringify({ image, name, details, price }));
+            window.location.href = 'reserve.html';
+        });
+    });
+</script>
+</body>
+</html>

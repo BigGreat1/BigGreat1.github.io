@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Convertibles</title>
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/carList.css" />
+</head>
+<body>
+<header>
+    <h1><a href="../../Feature1/text/firstpage.html">TEAM 11 RENTALS</a></h1>
+    <nav class="menu">
+        <ul>
+            <li><a href="../../Feature1/text/firstpage.html">Home</a></li>
+            <li><a href="cartypes.html" class="current">Car Types</a></li>
+            <li><a href="agencies.html">Agencies</a></li>
+            <li><a href="review.html">Reviews</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="container">
+        <h2>Convertibles</h2>
+
+        <div class="carCard">
+            <img src="../images/14915_st0640_116.png" alt="Audi A5 2024" />
+            <div class="car-info">
+                <h3>Audi A5 2024</h3>
+                <p>Fuel Efficient, 4 seats, Automatic</p>
+                <p>$300/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/2020-Jaguar-F-TYPE-front_13555_032_2400x1800_1AA.png.avif" alt="Jaguar F-TYPE 2020" />
+            <div class="car-info">
+                <h3>Jaguar F-TYPE 2020</h3>
+                <p>Fuel Efficient, 2 seats, Automatic</p>
+                <p>$370/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/maserati-cars-png-file-116629768800uougkxz6w.png" alt="Maserati Grancabrio" />
+            <div class="car-info">
+                <h3>Maserati Grancabrio</h3>
+                <p>Fuel Efficient, 4 seats, Automatic</p>
+                <p>$400/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/Convertible-Chevrolet-PNG-Free-Download.png" alt="Chevrolet camaro 2018" />
+            <div class="car-info">
+                <h3>Chevrolet camaro 2018</h3>
+                <p>Fuel Efficient, 2 seats, Automatic</p>
+                <p>$180/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/cosy.arox.webp" alt="BMW M8 Competition Convertible" />
+            <div class="car-info">
+                <h3>BMW M8 Competition Convertible</h3>
+                <p>Fuel Efficient, 4 seats, Automatic</p>
+                <p>$300/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    document.querySelectorAll('.reserveBtn').forEach(button => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.carCard');
+            const image = card.querySelector('img').src;
+            const name = card.querySelector('h3').innerText;
+            const details = card.querySelectorAll('p')[0].innerText;
+            const price = card.querySelectorAll('p')[1].innerText;
+
+            localStorage.setItem('selectedCar', JSON.stringify({ image, name, details, price }));
+            window.location.href = 'reserve.html';
+        });
+    });
+</script>
+</body>
+</html>

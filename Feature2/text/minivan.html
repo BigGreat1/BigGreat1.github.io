@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minivans</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/carList.css">
+</head>
+<body>
+<header>
+    <h1><a href="../../Feature1/text/firstpage.html">TEAM 11 RENTALS</a></h1>
+    <nav class="menu">
+        <ul>
+            <li><a href="../../Feature1/text/firstpage.html">Home</a></li>
+            <li><a href="cartypes.html" class="current">Car Types</a></li>
+            <li><a href="agencies.html">Agencies</a></li>
+            <li><a href="review.html">Reviews</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+        <h2>Minivans</h2>
+
+        <div class="carCard">
+            <img src="../images/iris.avif" alt="Chrysler Voyager">
+            <div class="car-info">
+                <h3>Chrysler Voyager</h3>
+                <p>Fuel Efficient, 10 seats, Automatic</p>
+                <p>$160/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/2025-Kia-Carnival-front_55064_032_2400x1800_SWP.png.avif" alt="BMW">
+            <div class="car-info">
+                <h3>KIA Carnival 2025</h3>
+                <p>Fuel Efficient, 9 seats, Automatic</p>
+                <p>$190/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/9c32f24c94ec0298601e670d17b44a6b.png" alt="BMW">
+            <div class="car-info">
+                <h3>Honda Odyssey 2025</h3>
+                <p>Fuel Efficient, 9 seats, Automatic</p>
+                <p>$220/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/3.-Van-with-Driver.png" alt="BMW">
+            <div class="car-info">
+                <h3>Mercedes Benz Vito 2018</h3>
+                <p>Fuel Efficient, 12 seats, Automatic</p>
+                <p>$280/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    document.querySelectorAll(".reserveBtn").forEach(button => {
+        button.addEventListener("click", function () {
+            const carCard = this.closest(".carCard");
+            const carImage = carCard.querySelector("img").src;
+            const carName = carCard.querySelector("h3").innerText;
+            const carDetails = carCard.querySelectorAll("p")[0].innerText;
+            const carPrice = carCard.querySelectorAll("p")[1].innerText;
+
+            // Save selected car to localStorage
+            localStorage.setItem("selectedCar", JSON.stringify({
+                image: carImage,
+                name: carName,
+                details: carDetails,
+                price: carPrice
+            }));
+
+            // Redirect to reserve page
+            window.location.href = "reserve.html";
+        });
+    });
+</script>
+</body>
+</html>

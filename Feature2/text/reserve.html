@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reserve Car</title>
+  <link rel="stylesheet" href="../styles/normalize.css" />
+  <link rel="stylesheet" href="../styles/reserve.css" />
+  <link rel="stylesheet" href="../styles/carList.css" />
+  <style>
+    .hidden { display: none; }
+    .car-card {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 8px;
+      align-items: center;
+    }
+    .car-card img {
+      max-width: 200px;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+    .car-details {
+      flex: 1;
+    }
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    form input {
+      width: 100%;
+      padding: 0.4rem;
+      margin-top: 0.2rem;
+      box-sizing: border-box;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      margin-top: 1.5rem;
+      background-color: #0044cc;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 4px;
+    }
+    form button:hover {
+      background-color: #003399;
+    }
+    .checkmark {
+      font-size: 3rem;
+      color: green;
+      margin-bottom: 1rem;
+    }
+    #successMessage {
+      text-align: center;
+      padding: 2rem;
+      border: 1px solid #4CAF50;
+      border-radius: 8px;
+      background-color: #e9f6ec;
+      max-width: 400px;
+      margin: 2rem auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="../../Feature1/text/firstpage.html">TEAM 11 RENTALS</a></h1>
+    <nav class="menu">
+      <ul>
+        <li><a href="../../Feature1/text/firstpage.html">Home</a></li>
+        <li><a href="cartypes.html" class="current">Car Types</a></li>
+        <li><a href="agencies.html">Agencies</a></li>
+        <li><a href="review.html">Reviews</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Car Info -->
+    <div class="car-card" id="carCard">
+      <img id="carImage" src="" alt="Selected Car" />
+      <div class="car-details">
+        <h2 id="carName"></h2>
+        <p id="carDetails"></p>
+        <p id="carPrice"></p>
+      </div>
+    </div>
+
+    <!-- Payment Form -->
+    <form id="paymentForm">
+      <h3>Payment Information</h3>
+      <label for="cardholderName">Cardholder Name</label>
+      <input type="text" id="cardholderName" required />
+
+      <label for="cardNumber">Card Number</label>
+      <input type="text" id="cardNumber" maxlength="16" pattern="\d{16}" placeholder="1234567812345678" required />
+
+      <div class="row" style="display:flex; gap: 1rem;">
+        <div style="flex:1;">
+          <label for="expiryDate">Expiry Date</label>
+          <input type="text" id="expiryDate" placeholder="MM/YY" pattern="\d{2}/\d{2}" required />
+        </div>
+        <div style="flex:1;">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" maxlength="3" pattern="\d{3}" required />
+        </div>
+      </div>
+
+      <button type="submit">Pay & Reserve</button>
+    </form>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="hidden">
+      <div class="checkmark">✔</div>
+      <h2>Payment Successful!</h2>
+      <p>Your car has been reserved.</p>
+      <button id="homeBtn">Go to Home Page</button>
+    </div>
+  </main>
+
+  <script>
+    const selectedCar = JSON.parse(localStorage.getItem("selectedCar"));
+    const carImage = document.getElementById("carImage");
+    const carName = document.getElementById("carName");
+    const carDetails = document.getElementById("carDetails");
+    const carPrice = document.getElementById("carPrice");
+    const carCard = document.getElementById("carCard");
+    const paymentForm = document.getElementById("paymentForm");
+    const successMessage = document.getElementById("successMessage");
+    const homeBtn = document.getElementById("homeBtn");
+
+    if (selectedCar) {
+      carImage.src = selectedCar.image;
+      carImage.alt = selectedCar.name;
+      carName.textContent = selectedCar.name;
+      carDetails.textContent = selectedCar.details;
+      carPrice.textContent = selectedCar.price;
+    } else {
+      // No car selected - hide form and show message
+      carCard.style.display = "none";
+      paymentForm.style.display = "none";
+      const main = document.querySelector("main");
+      const message = document.createElement("p");
+      message.style.color = "#cc0000";
+      message.style.textAlign = "center";
+      message.style.marginTop = "2rem";
+      message.textContent = "No car selected. Please go back to Car Types and select a car.";
+      main.appendChild(message);
+    }
+
+    paymentForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // You can add more validation here if needed
+
+      paymentForm.classList.add("hidden");
+      successMessage.classList.remove("hidden");
+
+      // Optionally clear selection from localStorage to reset after reservation
+      localStorage.removeItem("selectedCar");
+    });
+
+    homeBtn.addEventListener("click", function () {
+      window.location.href = "../../Feature1/text/firstpage.html";
+    });
+  </script>
+</body>
+</html>

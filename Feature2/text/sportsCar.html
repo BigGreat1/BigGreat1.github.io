@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sports Cars</title>
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/carList.css" />
+</head>
+<body>
+<header>
+    <h1><a href="../../Feature1/text/firstpage.html">TEAM 11 RENTALS</a></h1>
+    <nav class="menu">
+        <ul>
+            <li><a href="../../Feature1/text/firstpage.html">Home</a></li>
+            <li><a href="cartypes.html" class="current">Car Types</a></li>
+            <li><a href="agencies.html">Agencies</a></li>
+            <li><a href="review.html">Reviews</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="container">
+        <h2>Sports Cars</h2>
+
+        <div class="carCard">
+            <img src="../images/pngimg.com - ferrari_PNG10654.png" alt="BMW" />
+            <div class="car-info">
+                <h3>Ferrari 2020</h3>
+                <p>Fuel Efficient, 2 seats, Automatic</p>
+                <p>$1100/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/Pagani.png" alt="BMW" />
+            <div class="car-info">
+                <h3>Pagani Huayra 2016</h3>
+                <p>Fuel Efficient, 2 seats, Automatic</p>
+                <p>$1200/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/pngimg.com - aston_martin_PNG37.png" alt="BMW" />
+            <div class="car-info">
+                <h3>Aston Martin 2021</h3>
+                <p>Fuel Efficient, 2 seats, Automatic</p>
+                <p>$900/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/Black-Lamborghini-Transparent-Image.png" alt="BMW" />
+            <div class="car-info">
+                <h3>Lamborgini Avantador 2019</h3>
+                <p>Fuel Efficient, 5 seats, Automatic</p>
+                <p>$970/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/realistic-sport-car-isolated-on-background-3d-rendering-illustration-png.png" alt="BMW" />
+            <div class="car-info">
+                <h3>Porche 911</h3>
+                <p>Fuel Efficient, 5 seats, Automatic</p>
+                <p>$500/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script>
+    document.querySelectorAll('.reserveBtn').forEach(button => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.carCard');
+            const image = card.querySelector('img').src;
+            const name = card.querySelector('h3').innerText;
+            const details = card.querySelectorAll('p')[0].innerText;
+            const price = card.querySelectorAll('p')[1].innerText;
+
+            localStorage.setItem('selectedCar', JSON.stringify({ image, name, details, price }));
+            window.location.href = 'reserve.html';
+        });
+    });
+</script>
+</body>
+</html>

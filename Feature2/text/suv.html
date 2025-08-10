@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SUVs</title>
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/carList.css" />
+</head>
+<body>
+<header>
+    <h1><a href="../../Feature1/text/firstpage.html">TEAM 11 RENTALS</a></h1>
+    <nav class="menu">
+        <ul>
+            <li><a href="../../Feature1/text/firstpage.html">Home</a></li>
+            <li><a href="cartypes.html" class="current">Car Types</a></li>
+            <li><a href="agencies.html">Agencies</a></li>
+            <li><a href="review.html">Reviews</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="container">
+        <h2>SUVs</h2>
+
+        <div class="carCard">
+            <img src="../images/2025-Chevrolet-Trax-gray-full_color-driver_side_front_quarter.png.avif" alt="BMW" />
+            <div class="car-info">
+                <h3>Chevrolet Trax 2025</h3>
+                <p>Fuel Efficient, 5 seats, Automatic</p>
+                <p>$160/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/2025-Audi-Q7-white-full_color-driver_side_front_quarter.png.avif" alt="BMW" />
+            <div class="car-info">
+                <h3>Audi Q7 2024</h3>
+                <p>Fuel Efficient, 5 seats, Automatic</p>
+                <p>$210/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/2025-Audi-Q3-white-full_color-driver_side_front_quarter.png.avif" alt="BMW" />
+            <div class="car-info">
+                <h3>Audi Q3 2022</h3>
+                <p>Fuel Efficient, 5 seats, Automatic</p>
+                <p>$200/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+        <div class="carCard">
+            <img src="../images/cosySec-4.png" alt="BMW" />
+            <div class="car-info">
+                <h3>BMW X2 Coupe SUV 2025</h3>
+                <p>Fuel Efficient, 5 seats, Automatic</p>
+                <p>$250/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+
+        <div class="carCard">
+            <img src="../images/b25_bwrfvc_fl1_0040_a.avif" alt="BMW" /></a>
+            <div class="car-info">
+                <h3>Toyota RAV4 2025</h3>
+                <p>Hybrid, 5 seats, Automatic</p>
+                <p>$150/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>  
+
+        <div class="carCard">
+            <img src="../images/hyundai-kona-ev.png" alt="BMW" /></a>
+            <div class="car-info">
+                <h3>Hyundai Kona EV 2020</h3>
+                <p>Electronic, 5 seats, Automatic</p>
+                <p>$160/day</p>
+                <button class="reserveBtn">Reserve</button>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script>
+    document.querySelectorAll('.reserveBtn').forEach(button => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.carCard');
+            const image = card.querySelector('img').src;
+            const name = card.querySelector('h3').innerText;
+            const details = card.querySelectorAll('p')[0].innerText;
+            const price = card.querySelectorAll('p')[1].innerText;
+
+            localStorage.setItem('selectedCar', JSON.stringify({ image, name, details, price }));
+            window.location.href = 'reserve.html';
+        });
+    });
+</script>
+</body>
+</html>
